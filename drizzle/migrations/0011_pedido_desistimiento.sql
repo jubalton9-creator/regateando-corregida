@@ -1,0 +1,7 @@
+ALTER TABLE public.pedidos ADD COLUMN IF NOT EXISTS buyer_name text, ADD COLUMN IF NOT EXISTS cancellation_token_hash text;
+CREATE OR REPLACE FUNCTION public.cerrar_pedido_desistido() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$ BEGIN IF NEW.status = 'desistido' AND OLD.status IS DISTINCT FROM NEW.status THEN UPDATE public.cotizaciones SET status = 'desistido' WHERE pedido_id = NEW.id; END IF; RETURN NEW; END; $$;
+REVOKE ALL ON FUNCTION public.cerrar_pedido_desistido() FROM PUBLIC, anon, authenticated;
+CREATE TRIGGER pedido_desistido_cotizaciones AFTER UPDATE OF status ON public.pedidos FOR EACH ROW EXECUTE FUNCTION public.cerrar_pedido_desistido();
+CREATE OR REPLACE FUNCTION public.bloquear_cotizacion_desistida() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$ DECLARE pedido_estado text; BEGIN SELECT status INTO pedido_estado FROM public.pedidos WHERE id = NEW.pedido_id FOR UPDATE; IF pedido_estado = 'desistido' AND NEW.status <> 'desistido' THEN RAISE EXCEPTION 'El comprador desistió. La negociación está cerrada.'; END IF; RETURN NEW; END; $$;
+REVOKE ALL ON FUNCTION public.bloquear_cotizacion_desistida() FROM PUBLIC, anon, authenticated;
+CREATE TRIGGER cotizacion_no_reabrir_desistida BEFORE INSERT OR UPDATE ON public.cotizaciones FOR EACH ROW EXECUTE FUNCTION public.bloquear_cotizacion_desistida();

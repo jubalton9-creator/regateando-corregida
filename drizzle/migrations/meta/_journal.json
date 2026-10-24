@@ -1,0 +1,132 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791980391027,
+      "tag": "0000_admin_edit_policies",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791984173649,
+      "tag": "0001_copiar_registros_admin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791984596282,
+      "tag": "0002_compradores_dni",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791984935187,
+      "tag": "0003_trigger_comprador_datos",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791988542329,
+      "tag": "0004_vendedores_datos_fiscales",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1791989119039,
+      "tag": "0005_add_zona_a_compradores",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1791989182836,
+      "tag": "0006_trigger_compradores_zona",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1791989792516,
+      "tag": "0007_opciones_lista",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1791990177267,
+      "tag": "0008_opciones_lista_original",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1791998830214,
+      "tag": "0009_add_barrio",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1792003630652,
+      "tag": "0010_handle_new_user_barrio",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1792071597918,
+      "tag": "0011_pedido_desistimiento",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1792092311100,
+      "tag": "0012_garage_registered_owners",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1792097785196,
+      "tag": "0013_regateo_mensajes",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1792109718479,
+      "tag": "0014_protect_real_negotiation_messages",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1792177703456,
+      "tag": "0015_sync_vendedor_a_suppliers",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1792178387606,
+      "tag": "0016_agregar_comercio_a_cuenta_existente",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1792408703892,
+      "tag": "0017_estado_cuentas",
+      "breakpoints": true
+    }
+  ]
+}

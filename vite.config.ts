@@ -1,0 +1,35 @@
+// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
+// or the app will break with duplicate plugins:
+//   - TanStack devtools (dev-only, first), tanstackStart, viteReact, tailwindcss, tsConfigPaths,
+//     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
+//     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
+// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { loadEnv } from "vite";
+import path from "path";
+
+// Load env vars so server routes (email webhooks, etc.) can read non-VITE secrets.
+// VITE_* vars are injected for the client bundle by the Lovable plugin; we only load
+// all vars here to populate process.env for server-side code. They are NOT exposed
+// to the client.
+const serverEnv = loadEnv(process.env["NODE_ENV"] || "development", process.cwd(), "");
+Object.assign(process.env, serverEnv);
+
+export default defineConfig({
+  tanstackStart: {
+    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+    // nitro/vite builds from this
+    server: { entry: "server" },
+  },
+  vite: {
+    resolve: {
+      alias: {
+        "entities/lib/decode.js": path.resolve(import.meta.dirname, "node_modules/entities/lib/decode.js"),
+        "entities/lib/encode.js": path.resolve(import.meta.dirname, "node_modules/entities/lib/encode.js"),
+        entities: path.resolve(import.meta.dirname, "node_modules/entities"),
+      },
+    },
+  },
+});
+
+

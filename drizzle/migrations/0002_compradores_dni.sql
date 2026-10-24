@@ -1,0 +1,1 @@
+ALTER TABLE public.compradores ADD COLUMN IF NOT EXISTS dni text;

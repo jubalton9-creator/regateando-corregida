@@ -1,0 +1,22 @@
+# Tareas
+- [x] Eliminar la página Vendedores, mantener barra y orden, quitar enlaces internos y saltos automáticos sin alterar pedidos/ofertas; verificadas 12 páginas, envío local sin salto y 20 pruebas de reglas.
+- [x] Exigir correo y alias/contraseña al abrir Mi cuenta, incluso con sesión abierta, antes de cargar datos; verificados bloqueo previo, rechazo de clave incorrecta y reinicio al volver a abrir.
+- [x] Renombrar Modificar mis datos como Mi cuenta, mover su acceso de los registros a Inicio y verificar que cargue y conserve los datos registrados.
+- [x] Agregar cambio de correo y alias/contraseña en Modificar mis datos para particulares y comercios; pruebas y casilleros verificados con sesión, sin modificar credenciales reales.
+- [x] Vaciar Inicio de sesión al salir y habilitar Compra - Venta de garage para compradores y comercios registrados.
+- [x] Personalizar las ofertas con el nombre del comprador y cerrar el pedido en ambas partes con DESISTO.
+- [x] Fotos ampliables en Comprar/Vender y cuadro de fotos debajo de Precio base.
+- [x] Limpiar Comprar/Vender al enviar o cambiar de página y verificarlo en pantalla.
+- [x] Barra superior negra con desplazamiento horizontal y flechas fijas.
+- [x] Eliminar /registro y todos los enlaces a esa página.
+- [x] Verificar navegación y eliminación en celular.
+- [x] Página /cotizar con visor de foto, importe/unidades, recuadro REGATEANDO con contraofertas y botones TRATO HECHO / DESISTO (solo estructura visual).
+- [x] Al enviar el pedido desde Comprar, la página queda en blanco y sin sesión, para que entre un comprador nuevo solo con correo y contraseña.
+- [x] Recuperar contraseña en la misma página Comprar: siempre visible, y sin sesión pide correo + DNI + celular de la ficha.
+- [x] Botón "Estoy registrado" de la Home abre de inmediato la página de inicio de sesión.
+- [x] Botón "Comprar ya" al lado del precio inicial y reloj de 3:00 en la negociación.
+- [x] Banner "El regateo termina en 3 minutos" con reloj grande y sello "Negociación cerrada" cruzando el texto.
+- [x] Botón "Consultar otros productos" en la negociación: consulta a la IA del vendedor y agrega productos extra al pedido (se suman al pagar).
+- [x] Caja "Detalle del pedido" en la negociación estilo factura: precio inicial y artículos agregados uno debajo del otro, con la descripción del producto al costado y total.
+- [x] Regateo real del comercio: el vendedor responde contraofertas desde su página (con fotos si quiere), el comprador recibe la respuesta del vendedor de verdad y la IA queda solo de reserva.
+- [x] Página del vendedor espejo del comprador: cotización, fotos, contraofertas, TRATO HECHO y DESISTO.

@@ -1,0 +1,41 @@
+// Barrios / localidades de cada zona del conurbano para el desplegable "Barrio".
+export const BARRIOS_POR_ZONA: Record<string, string[]> = {
+  Victoria: ["Victoria Centro", "Barrio Parque Aguirre", "Las Lomas de Victoria", "Villa Jardín", "La Paloma", "Barrio Hipódromo", "San Jorge"],
+  "San Fernando": ["San Fernando Centro", "Victoria", "Virreyes", "Islas del Delta", "Barrio Infico", "Villa Jardín", "Alto Delta"],
+  Tigre: ["Tigre Centro", "Don Torcuato", "General Pacheco", "El Talar", "Benavídez", "Rincón de Milberg", "Troncos del Talar", "Dique Luján", "Ricardo Rojas", "Nordelta", "Islas del Delta"],
+  "Tigre - Nordelta": ["Barrio Los Lagos", "La Isla", "Los Castores", "El Golf", "Portezuelo", "Barrio Cabos del Lago", "Centro Comercial Nordelta"],
+  "San Isidro": ["San Isidro Centro", "Martínez", "Acassuso", "Beccar", "Boulogne", "Villa Adelina"],
+  "Vicente López": ["Vicente López", "Olivos", "Florida", "Florida Oeste", "Munro", "Carapachay", "Villa Martelli", "La Lucila", "Villa Adelina"],
+  Escobar: ["Belén de Escobar", "Garín", "Ingeniero Maschwitz", "Matheu", "Maquinista Savio", "Loma Verde"],
+  Pilar: ["Pilar Centro", "Del Viso", "Derqui", "Manuel Alberti", "Presidente Derqui", "Villa Rosa", "Fátima", "La Lonja", "Manzanares", "Villa Astolfi"],
+  "José C. Paz": ["José C. Paz Centro", "Del Viso", "Tortuguitas", "Sol y Verde", "Vucetich"],
+  "Malvinas Argentinas": ["Los Polvorines", "Grand Bourg", "Tortuguitas", "Pablo Nogués", "Villa de Mayo", "Ingeniero Adolfo Sourdeaux", "Tierras Altas"],
+  "San Miguel": ["San Miguel Centro", "Bella Vista", "Muñiz", "Santa María", "Mitre"],
+  Hurlingham: ["Hurlingham", "William C. Morris", "Villa Tesei"],
+  "Ituzaingó": ["Ituzaingó Centro", "Ituzaingó Sur", "Villa Udaondo", "Parque Leloir"],
+  "Morón": ["Morón Centro", "Castelar", "Haedo", "El Palomar", "Villa Sarmiento"],
+  "Tres de Febrero": ["Caseros", "Ciudadela", "Santos Lugares", "Sáenz Peña", "Villa Bosch", "Martín Coronado", "Loma Hermosa", "Ciudad Jardín", "Pablo Podestá", "Churruca", "El Libertador", "Villa Raffo", "Remedios de Escalada"],
+  "San Martín": ["San Martín Centro", "Villa Ballester", "José León Suárez", "Billinghurst", "San Andrés", "Villa Lynch", "Villa Maipú", "Chilavert", "Loma Hermosa"],
+  "La Matanza": ["San Justo", "Ramos Mejía", "Isidro Casanova", "González Catán", "Laferrere", "Villa Luzuriaga", "Lomas del Mirador", "Tapiales", "La Tablada", "Aldo Bonzi", "Ciudad Evita", "Rafael Castillo", "Gregorio de Laferrere", "Virrey del Pino", "20 de Junio"],
+  Merlo: ["Merlo Centro", "Parque San Martín", "Libertad", "Mariano Acosta", "Pontevedra", "San Antonio de Padua"],
+  Moreno: ["Moreno Centro", "Paso del Rey", "La Reja", "Francisco Álvarez", "Trujui", "Cuartel V"],
+  "Lomas de Zamora": ["Lomas Centro", "Banfield", "Temperley", "Turdera", "Llavallol", "Villa Fiorito", "Ingeniero Budge", "Villa Centenario", "San José"],
+  "Lanús": ["Lanús Este", "Lanús Oeste", "Remedios de Escalada", "Monte Chingolo", "Gerli", "Valentín Alsina"],
+  Avellaneda: ["Avellaneda Centro", "Sarandí", "Wilde", "Dock Sud", "Gerli", "Piñeyro", "Villa Domínico"],
+  Quilmes: ["Quilmes Centro", "Bernal", "Don Bosco", "Ezpeleta", "San Francisco Solano", "Quilmes Oeste"],
+  Berazategui: ["Berazategui Centro", "Hudson", "Ranelagh", "Plátanos", "Sourigues", "Guillermo Hudson", "El Pato", "Juan María Gutiérrez"],
+  "Florencio Varela": ["Florencio Varela Centro", "Bosques", "Zeballos", "Ingeniero Allan", "La Capilla", "Villa Vatteone", "Villa Brown"],
+  "Almirante Brown": ["Adrogué", "Burzaco", "Longchamps", "José Mármol", "Rafael Calzada", "Claypole", "San José", "Glew", "Ministro Rivadavia", "Malvinas Argentinas"],
+  "Esteban Echeverría": ["Monte Grande", "Luis Guillón", "El Jagüel", "9 de Abril", "Canning"],
+  Ezeiza: ["Ezeiza Centro", "Tristán Suárez", "Canning", "La Unión", "Carlos Spegazzini", "José María Ezeiza"],
+  "Presidente Perón": ["Guernica", "Numancia", "Glew"],
+  "San Vicente": ["San Vicente Centro", "Alejandro Korn", "Domselaar"],
+  "Cañuelas": ["Cañuelas Centro", "Alejandro Petión", "Máximo Paz", "Uribelarrea", "Gobernador Udaondo"],
+  "Marcos Paz": ["Marcos Paz Centro", "Elías Romero", "Villars"],
+  "General Las Heras": ["General Las Heras Centro", "Plomer", "Villars", "Enrique Fynn"],
+  CABA: ["Palermo", "Belgrano", "Recoleta", "Caballito", "Flores", "Almagro", "Balvanera", "San Telmo", "La Boca", "Barracas", "Villa Urquiza", "Villa Devoto", "Núñez", "Saavedra", "Colegiales", "Villa Crespo", "Boedo", "Mataderos", "Liniers", "Villa del Parque", "Puerto Madero", "Retiro", "San Nicolás", "Monserrat", "Parque Patricios", "Villa Lugano"],
+};
+
+export function barriosDe(zona: string): string[] {
+  return [...(BARRIOS_POR_ZONA[zona] ?? [])].sort((a, b) => a.localeCompare(b, "es"));
+}

@@ -1,0 +1,1 @@
+ALTER TABLE public.vendedores ADD COLUMN IF NOT EXISTS dni text, ADD COLUMN IF NOT EXISTS cuit text, ADD COLUMN IF NOT EXISTS telefono text;
